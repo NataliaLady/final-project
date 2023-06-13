@@ -14,7 +14,7 @@ import (
 type Server struct {
 	*http.Server
 	Countries []types.Country
-	ResultT   data.ResultT
+	ResultT   data.Result
 }
 
 func NewServer(address string, port int) *Server {

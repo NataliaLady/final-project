@@ -12,7 +12,7 @@ func GetResultData(
 	billingData data.BillingData,
 	sliceSupportData []data.SupportData,
 	sliceIncidentData []data.IncidentData,
-	countries []types.Country) data.ResultT {
+	countries []types.Country) data.Result {
 
 	sms := prepareSMSData(sliceSMSData, countries)
 	mms := prepareMMSData(sliceMMSData, countries)
@@ -31,7 +31,7 @@ func GetResultData(
 	}
 
 	status := sms != nil && mms != nil && sliceVoiceData != nil && email != nil && resultSetT.Billing == billingData && support != nil && sliceIncidentData != nil
-	resultT := data.ResultT{
+	resultT := data.Result{
 		Status: status,
 	}
 
